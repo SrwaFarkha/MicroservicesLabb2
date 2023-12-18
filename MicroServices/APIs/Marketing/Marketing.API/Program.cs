@@ -1,5 +1,5 @@
-using Microsoft.EntityFrameworkCore;
 using Marketing.DataAccess;
+using Marketing.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,7 @@ var connectionString =
     $"Data Source={host};Initial Catalog={database};User ID={username};Password={password};Trusted_connection=False;TrustServerCertificate=True;";
 
 builder.Services.AddSqlServer<MarketingContext>(connectionString);
+builder.Services.AddScoped<MarketingContext>();
 builder.Services.AddScoped<IMarketingRepository, MarketingRepository>();
 
 var app = builder.Build();
@@ -20,6 +21,7 @@ if (app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
-app.MapGet("/", () => "Hello World!");
+app.MapMarketingExtensions();
+
 
 app.Run();

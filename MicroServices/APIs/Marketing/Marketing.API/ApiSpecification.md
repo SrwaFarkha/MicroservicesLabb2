@@ -8,7 +8,7 @@ Customer objects contain their Name and Emailadress.
 Successful requests are returned with 200OK. 
 
 * **HTTP GET /customer/{id}**  
-This endpoint returns a single customer, specified by id in the query, as a JSON-object. 
+This endpoint returns a single customer, specified by id in the url, as a JSON-object. 
 The customer object contains Name and Emailadress.
 Returns 200OK or 404Notfound if customer cannot be found.
 If there is a problem with the body of the request this is indicated by 400BadRequest. 

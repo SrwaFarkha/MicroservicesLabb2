@@ -13,6 +13,8 @@ services:
       - marketing
     depends_on:
       - marketing.db
+    ports: 
+      - "5000:8080"
     environment:
       - DB_HOST=marketing.db
       - DB_DATABASE=MarketingDB

@@ -6,7 +6,7 @@ public class MarketingRepository(MarketingContext context) : IMarketingRepositor
 {
     public async Task<Customer> GetByIdAsync(int id)
     {
-        return await context.Customers.FindAsync(id);
+        return await context.Customers.FirstOrDefaultAsync(c => c.Id == id);
     }
 
     public async Task<IEnumerable<Customer>> GetAllAsync()
