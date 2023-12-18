@@ -1,0 +1,32 @@
+version: '3.4'
+
+networks:
+    marketing:
+
+services:
+  marketing.api:
+    container_name: marketingapi
+    build:
+      context: .
+      dockerfile: MicroServices/APIs/Marketing/Marketing.API/Dockerfile
+    networks:
+      - marketing
+    depends_on:
+      - marketing.db
+    environment:
+      - DB_HOST=marketing.db
+      - DB_DATABASE=MarketingDB
+      - DB_USER=sa
+      - DB_MSSQL_SA_PASSWORD=Pwd123!!1
+  
+  marketing.db:
+    container_name: marketingdb
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      - marketing
+    ports:
+        - "7000:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pwd123!!1
+      - MSSQL_PID=Developer
