@@ -1,4 +1,4 @@
-#Summary
+# Summary
 This is a microservice project with three separate services. Together they run the functions needed for a pizza restaurant. 
 
 ## Menu service
