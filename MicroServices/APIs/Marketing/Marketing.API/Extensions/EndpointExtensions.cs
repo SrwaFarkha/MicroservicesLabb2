@@ -10,7 +10,7 @@ public static class MarketingExtensions {
         app.MapGet("/", () => "Hello World from marketing service!");
         app.MapGet("/customers/{id}", ([FromServices] IMarketingRepository repo, int id) => repo.GetByIdAsync(id));
         app.MapGet("/customers", ([FromServices] IMarketingRepository repo) => repo.GetAllAsync());
-        app.MapPost("/customer",
+        app.MapPost("/customers",
             ([FromServices] IMarketingRepository repo, [FromBody] Customer customer) => repo.AddAsync(customer));
 
         return app;

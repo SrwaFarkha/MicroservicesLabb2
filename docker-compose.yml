@@ -1,20 +1,32 @@
 version: '3.4'
 
 networks:
+    gateway:
     marketing:
 
+
 services:
+  pizzagateway:
+    build:
+      context: .
+      dockerfile: MicroServices/Gateways/PizzaGateway/Dockerfile
+    networks:
+      - gateway
+    depends_on:
+      - marketing.api
+    ports:
+      - "5000:8080"
+
   marketing.api:
-    container_name: marketingapi
+    container_name: marketing.api
     build:
       context: .
       dockerfile: MicroServices/APIs/Marketing/Marketing.API/Dockerfile
     networks:
+      - gateway
       - marketing
     depends_on:
       - marketing.db
-    ports: 
-      - "5000:8080"
     environment:
       - DB_HOST=marketing.db
       - DB_DATABASE=MarketingDB

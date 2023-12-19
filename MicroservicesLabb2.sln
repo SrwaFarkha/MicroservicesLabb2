@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34309.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Domain.Common", "Domain\Domain.Common\Domain.Common.csproj", "{E0517AE4-90AB-4640-8C2A-1228D4076889}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain.Common", "Domain\Domain.Common\Domain.Common.csproj", "{E0517AE4-90AB-4640-8C2A-1228D4076889}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{F4814ADA-DF20-4C5A-9647-0E17841EC251}"
 EndProject
@@ -15,21 +15,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "APIs", "APIs", "{8006CE07-C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Menu", "Menu", "{04CE5E16-A73D-49E5-AE86-7E71AEC29FCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.API", "MicroServices\APIs\Menu\Menu.API\Menu.API.csproj", "{67832CA3-8E88-4C86-AA90-C6BF0D412576}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu.API", "MicroServices\APIs\Menu\Menu.API\Menu.API.csproj", "{67832CA3-8E88-4C86-AA90-C6BF0D412576}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Marketing", "Marketing", "{6536165E-1307-4AE6-92A7-5792CF26BA85}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Order", "Order", "{9C26945A-5032-440D-973D-72CE23832F70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.API", "MicroServices\APIs\Order\Order.API\Order.API.csproj", "{E2D4A434-6973-430C-9B47-C73A29580916}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.API", "MicroServices\APIs\Order\Order.API\Order.API.csproj", "{E2D4A434-6973-430C-9B47-C73A29580916}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketing.API", "MicroServices\APIs\Marketing\Marketing.API\Marketing.API.csproj", "{40B328D6-FAD6-4467-BF4A-1B97AD78C536}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketing.API", "MicroServices\APIs\Marketing\Marketing.API\Marketing.API.csproj", "{40B328D6-FAD6-4467-BF4A-1B97AD78C536}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Marketing.DataAccess", "MicroServices\APIs\Marketing\Marketing.DataAccess\Marketing.DataAccess.csproj", "{56972A5C-D3FA-407C-A6EB-2C6063BC8F65}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Marketing.DataAccess", "MicroServices\APIs\Marketing\Marketing.DataAccess\Marketing.DataAccess.csproj", "{56972A5C-D3FA-407C-A6EB-2C6063BC8F65}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Menu.DataAccess", "MicroServices\APIs\Menu\Menu.DataAccess\Menu.DataAccess.csproj", "{73F35B25-1ADF-4772-B46B-389D9A961E26}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Menu.DataAccess", "MicroServices\APIs\Menu\Menu.DataAccess\Menu.DataAccess.csproj", "{73F35B25-1ADF-4772-B46B-389D9A961E26}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order.DataAccess", "MicroServices\APIs\Order\Order.DataAccess\Order.DataAccess.csproj", "{341CD92C-4695-482C-A936-D7440055B78D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Order.DataAccess", "MicroServices\APIs\Order\Order.DataAccess\Order.DataAccess.csproj", "{341CD92C-4695-482C-A936-D7440055B78D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Gateways", "Gateways", "{54473724-F4FA-4B3E-9A93-64C29D2DE26F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PizzaGateway", "MicroServices\Gateways\PizzaGateway\PizzaGateway.csproj", "{71A49720-55FE-4A95-901D-2131CD3B248A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,6 +69,10 @@ Global
 		{341CD92C-4695-482C-A936-D7440055B78D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{341CD92C-4695-482C-A936-D7440055B78D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{341CD92C-4695-482C-A936-D7440055B78D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71A49720-55FE-4A95-901D-2131CD3B248A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A49720-55FE-4A95-901D-2131CD3B248A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A49720-55FE-4A95-901D-2131CD3B248A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{71A49720-55FE-4A95-901D-2131CD3B248A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +89,8 @@ Global
 		{56972A5C-D3FA-407C-A6EB-2C6063BC8F65} = {6536165E-1307-4AE6-92A7-5792CF26BA85}
 		{73F35B25-1ADF-4772-B46B-389D9A961E26} = {04CE5E16-A73D-49E5-AE86-7E71AEC29FCF}
 		{341CD92C-4695-482C-A936-D7440055B78D} = {9C26945A-5032-440D-973D-72CE23832F70}
+		{54473724-F4FA-4B3E-9A93-64C29D2DE26F} = {6E597C5F-510A-4EF0-A80A-8999E3C73282}
+		{71A49720-55FE-4A95-901D-2131CD3B248A} = {54473724-F4FA-4B3E-9A93-64C29D2DE26F}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F67673CC-0D22-4DFB-AB6A-053E8049903D}
