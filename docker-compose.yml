@@ -1,21 +1,53 @@
-version: '3.4'
+-version: '3.4'
 
 networks:
-    gateway:
-    marketing:
+  menu:
+  gateway:
+  marketing:
 
 
 services:
-  pizzagateway:
+  apigateway:
+    image: ${DOCKER_REGISTRY-}apigateway
     build:
       context: .
-      dockerfile: MicroServices/Gateways/PizzaGateway/Dockerfile
+      dockerfile: MicroServices/Gateways/ApiGateway/Dockerfile
     networks:
-      - gateway
+       - gateway
     depends_on:
-      - marketing.api
+      - menu.api
+      - marketing.api 
     ports:
       - "5000:8080"
+      - "5001:8081"
+
+  menu.api:
+    image: ${DOCKER_REGISTRY-}menuapi
+    build:
+      context: .
+      dockerfile: MicroServices/APIs/Menu/Menu.API/Dockerfile
+    networks:
+      - menu
+      - gateway 
+    depends_on:
+      - menu.db
+    environment:
+      - DB_HOST=menu.db
+      - DB_DATABASE=MenuDB
+      - DB_USER=sa
+      - DB_MSSQL_SA_PASSWORD=Pwd123!!1
+
+  menu.db:
+    container_name: menudb
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    networks:
+      - menu
+    ports:
+      - "7000:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=Pwd123!!1
+      - MSSQL_PID=Developer
 
   marketing.api:
     container_name: marketing.api
