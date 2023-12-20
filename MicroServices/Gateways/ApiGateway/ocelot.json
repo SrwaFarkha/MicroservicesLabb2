@@ -1,0 +1,19 @@
+{
+    "Routes": [
+        {
+            "UpstreamPathTemplate": "/menu",
+            "UpstreamHttpMethod": [ "Get", "Post" ],
+            "DownstreamScheme": "http",
+            "DownstreamHostAndPorts": [
+                {
+                    "Host": "menu.api",
+                    "Port": 8080
+                }
+            ],
+            "DownstreamPathTemplate": "/"
+        }
+    ],
+    "GlobalConfiguration": {
+        "BaseUrl": "http://localhost:5000/"
+    }
+}
