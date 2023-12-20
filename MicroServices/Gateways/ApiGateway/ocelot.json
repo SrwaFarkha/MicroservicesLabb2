@@ -1,18 +1,66 @@
 {
-    "Routes": [
+  "Routes": [
+    {
+      "UpstreamPathTemplate": "/menu",
+      "UpstreamHttpMethod": [ "Get", "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
         {
-            "UpstreamPathTemplate": "/menu",
-            "UpstreamHttpMethod": [ "Get", "Post" ],
-            "DownstreamScheme": "http",
-            "DownstreamHostAndPorts": [
-                {
-                    "Host": "menu.api",
-                    "Port": 8080
-                }
-            ],
-            "DownstreamPathTemplate": "/"
+          "Host": "menu.api",
+          "Port": 8080
         }
-    ],
+      ],
+      "DownstreamPathTemplate": "/"
+    },
+    {
+      "UpstreamPathTemplate": "/marketing/",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "marketing.api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/"
+    },
+    {
+      "UpstreamPathTemplate": "/marketing/customers/{id}",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "marketing.api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/customers/{id}"
+    },
+    {
+      "UpstreamPathTemplate": "/marketing/customers",
+      "UpstreamHttpMethod": [ "Get" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "marketing.api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/customers"
+    },
+    {
+      "UpstreamPathTemplate": "/marketing/customers",
+      "UpstreamHttpMethod": [ "Post" ],
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "marketing.api",
+          "Port": 8080
+        }
+      ],
+      "DownstreamPathTemplate": "/customers"
+    }
+  ],
     "GlobalConfiguration": {
         "BaseUrl": "http://localhost:5000/"
     }

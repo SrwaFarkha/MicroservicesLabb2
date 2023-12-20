@@ -1,4 +1,4 @@
--version: '3.4'
+version: '3.4'
 
 networks:
   menu:
@@ -71,7 +71,7 @@ services:
     networks:
       - marketing
     ports:
-        - "7000:1433"
+        - "7001:1433"
     environment:
       - ACCEPT_EULA=Y
       - SA_PASSWORD=Pwd123!!1
