@@ -7,28 +7,22 @@ using System.Threading.Tasks;
 
 namespace Menu.DataAccess
 {
-	public class MenuRepository : IMenuRepository
+	public class MenuRepository(MenuDbContext context) : IMenuRepository
 	{
-		private readonly MenuDbContext _context;
-		public MenuRepository(MenuDbContext context)
-		{
-			_context = context;
-		}
-
 		public async Task<Menu> GetByIdAsync(int id)
 		{
-			return await _context.Menus.FindAsync(id);
+			return await context.Menus.FindAsync(id)  ?? throw new InvalidOperationException();
 		}
 
 		public async Task<IEnumerable<Menu>> GetAllAsync()
 		{
-			return await _context.Menus.ToListAsync();
+			return await context.Menus.ToListAsync();
 		}
 
 		public async Task AddAsync(Menu entity)
 		{
-			_context.Menus.Add(entity);
-			await _context.SaveChangesAsync();
+			context.Menus.Add(entity);
+			await context.SaveChangesAsync();
 		}
 	}
 }

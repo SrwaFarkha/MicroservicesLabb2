@@ -4,6 +4,6 @@ namespace Menu.API.Endpoints.GetAll
 {
 	public class Request
 	{
-		public IEnumerable<MenuDto> Menus { get; set; }
+		//public IEnumerable<MenuDto> Menus { get; set; }
 	}
 }

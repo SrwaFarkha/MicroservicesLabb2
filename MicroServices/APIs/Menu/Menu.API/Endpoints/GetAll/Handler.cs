@@ -13,7 +13,7 @@ namespace Menu.API.Endpoints.GetAll
 			AllowAnonymous();
 		}
 
-		public override async Task HandleAsync(Request req, CancellationToken ct)
+		public override async Task HandleAsync(Request request, CancellationToken cancellationToken)
 		{
 			var allMenu = await repository.GetAllAsync();
 			var menuDtos =
@@ -21,7 +21,7 @@ namespace Menu.API.Endpoints.GetAll
 					new MenuDto(
 						x.Name,
 						x.Ingredients,
-						x.Price
+						(decimal)x.Price
 						)
 				);
 			await SendAsync(
@@ -29,7 +29,7 @@ namespace Menu.API.Endpoints.GetAll
 				{
 					Menus = menuDtos
 				},
-				cancellation: ct);
+				cancellation: cancellationToken);
 		}
 	}
 }
