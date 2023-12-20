@@ -1,18 +1,6 @@
 {
   "Routes": [
     {
-      "UpstreamPathTemplate": "/menu",
-      "UpstreamHttpMethod": [ "Get", "Post" ],
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "menu.api",
-          "Port": 8080
-        }
-      ],
-      "DownstreamPathTemplate": "/"
-    },
-    {
       "UpstreamPathTemplate": "/marketing/",
       "UpstreamHttpMethod": [ "Get" ],
       "DownstreamScheme": "http",
@@ -61,7 +49,7 @@
       "DownstreamPathTemplate": "/customers"
     }
   ],
-    "GlobalConfiguration": {
-        "BaseUrl": "http://localhost:5000/"
-    }
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000/"
+  }
 }
