@@ -11,4 +11,4 @@ Handles receiving orders and putting them into a database. Can get info about th
 Stores info about customers. Handles sending out marketing emails about campaigns. 
 
 # Run instructions
-(work in progress, to be decided after we know if we want docker) 
+Cd to solution directory, build project and run `docker compose up`
